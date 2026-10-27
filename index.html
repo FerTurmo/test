@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Public Safety - Incident Report</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            color: #111;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .report-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px double #002244;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #002244;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+            color: #555;
+            font-weight: normal;
+        }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .meta-table td {
+            border: 1px solid #888;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .label {
+            font-weight: bold;
+            background-color: #f9f9f9;
+            width: 25%;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #002244;
+            border-bottom: 1px solid #002244;
+            margin-top: 30px;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .statement {
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-top: 15px;
+        }
+
+        .footer-sign {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 40px;
+        }
+
+        .signature-line {
+            width: 40%;
+            border-top: 1px solid #333;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 13px;
+        }
+
+        .system-metadata {
+            margin-top: 40px;
+            background-color: #fafafa;
+            border: 1px solid #b22222;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .metadata-header {
+            color: #b22222;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #b22222;
+            padding-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .metadata-row {
+            margin-bottom: 6px;
+        }
+
+        .metadata-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .live-data {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .blink {
+            color: #b22222;
+            animation: blinker 1.5s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .report-container {
+                padding: 20px;
+            }
+
+            .meta-table td {
+                padding: 6px;
+                font-size: 12px;
+                overflow-wrap: anywhere;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .footer-sign {
+                gap: 20px;
+            }
+
+            .signature-line {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="report-container">
+
+    <div class="header">
+        <h1>Department of Police &amp; Public Safety</h1>
+        <h2>Official Incident Administrative Report</h2>
+    </div>
+
+    <table class="meta-table">
+        <tr>
+            <td class="label">Case Number:</td>
+            <td>INC-2026-8849A</td>
+            <td class="label">Date of Report:</td>
+            <td id="current-date">Pending...</td>
+        </tr>
+        <tr>
+            <td class="label">Reporting Officer:</td>
+            <td>Det. M. Jenkins (#402)</td>
+            <td class="label">Classification:</td>
+            <td>Class B Misdemeanor / Investigation</td>
+        </tr>
+        <tr>
+            <td class="label">Status:</td>
+            <td style="color: #b22222; font-weight: bold;">
+                ACTIVE / UNRESOLVED
+            </td>
+            <td class="label">Security Level:</td>
+            <td>Restricted Access</td>
+        </tr>
+    </table>
+
+    <div class="section-title">1. Incident Summary</div>
+    <p class="statement">
+        This document serves as an official administrative filing
+        regarding an ongoing digital compliance investigation.
+        Under federal and local jurisdictional updates for the
+        current calendar year, notice is hereby compiled regarding
+        unauthorized system interactions and related network
+        anomalies tied to the recipient profile.
+    </p>
+
+    <div class="section-title">2. Statutory Notice &amp; Verification</div>
+    <p class="statement">
+        Pursuant to public safety statutes, the individual accessing
+        this portal is requested to verify authentication tokens.
+        Failure to maintain active browser compliance signatures
+        during an active administrative review may result in
+        statutory delays or subsequent standard procedural updates
+        by filing clerks.
+    </p>
+
+    <div class="section-title">3. Affirmation</div>
+    <p class="statement">
+        By remaining on this administrative registry, the session
+        operator acknowledges receipt of the filing notice. No
+        further immediate civilian action is mandated at this stage
+        of the clerical review process.
+    </p>
+
+    <div class="footer-sign">
+        <div class="signature-line">Authorized Digital Signature</div>
+        <div class="signature-line">Records &amp; Clerk Division</div>
+    </div>
+
+    <div class="system-metadata">
+        <div class="metadata-header">
+            🔒 INTERNAL SYSTEM METADATA // RESTRICTED ACCESS
+        </div>
+
+        <div class="metadata-row">
+            <span class="metadata-label">Connection Status:</span>
+            <span class="live-data" style="color: green;">
+                LOCAL PREVIEW — NO DATA SENT
+            </span>
+        </div>
+
+        <div class="metadata-row">
+            <span class="metadata-label">Target Device OS:</span>
+            <span id="meta-os" class="live-data">Not collected</span>
+        </div>
+
+        <div class="metadata-row">
+            <span class="metadata-label">GPS Latitude:</span>
+            <span class="live-data">Not collected</span>
+        </div>
+
+        <div class="metadata-row">
+            <span class="metadata-label">GPS Longitude:</span>
+            <span class="live-data">Not collected</span>
+        </div>
+
+        <div class="metadata-row">
+            <span class="metadata-label">Tracking Accuracy:</span>
+            <span class="live-data">Not applicable</span>
+        </div>
+
+        <div class="metadata-row"
+             style="margin-top: 10px; font-size: 11px; color: #888;">
+            [LOCAL PREVIEW: Geolocation and external data transmission
+            are disabled.]
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+
+    document.getElementById('current-date').textContent =
+        new Date().toLocaleDateString('en-US', options);
+</script>
+
+</body>
+</html>
