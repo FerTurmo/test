@@ -3,85 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0f172a">
-  <title>Prueba de geolocalización</title>
+  <meta name="theme-color" content="#f4f4f4">
+  <title>Informe ficticio y prueba de ubicación</title>
   <style>
-    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #f1f5f9; color: #0f172a; }
-    main { width: min(100%, 620px); padding: clamp(24px, 5vw, 40px); background: white; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 16px 40px #0f172a12; }
-    h1 { margin: 0 0 12px; font-size: clamp(1.6rem, 4vw, 2.1rem); }
-    p { line-height: 1.6; color: #475569; }
-    button { width: 100%; margin: 12px 0; padding: 14px 18px; border: 0; border-radius: 10px; background: #1d4ed8; color: white; font: inherit; font-weight: 650; cursor: pointer; }
-    button:disabled { opacity: .65; cursor: wait; }
-    .status { padding: 12px 14px; border-radius: 10px; background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; overflow-wrap: anywhere; }
-    dl { display: grid; grid-template-columns: minmax(130px, 1fr) 2fr; gap: 12px; margin: 20px 0 0; }
-    dt { color: #64748b; } dd { margin: 0; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-    .note { font-size: .9rem; }
-    @media (max-width: 420px) { dl { grid-template-columns: 1fr; gap: 5px; } dd { margin-bottom: 10px; } }
+    body { margin: 0; padding: 24px 12px; background: #f4f4f4; color: #111; font-family: "Times New Roman", Times, serif; }
+    main { max-width: 800px; margin: 0 auto; }
+    .demo-banner { margin-bottom: 16px; padding: 12px 16px; border: 1px solid #b22222; background: #fff5f5; color: #8b1d1d; font: 700 14px/1.5 system-ui, sans-serif; text-align: center; }
+    .report { padding: clamp(20px, 6vw, 50px); background: #fff; border: 1px solid #ccc; box-shadow: 0 0 10px #00000012; }
+    header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px double #002244; text-align: center; }
+    h1 { margin: 0; color: #002244; font-size: clamp(20px, 4vw, 26px); text-transform: uppercase; letter-spacing: .5px; }
+    header h2 { margin: 8px 0 0; color: #555; font-size: 16px; font-weight: normal; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+    td { border: 1px solid #888; padding: 8px 10px; font-size: 14px; overflow-wrap: anywhere; }
+    td.label { width: 25%; background: #f9f9f9; font-weight: bold; }
+    h3 { margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #002244; color: #002244; font-size: 16px; text-transform: uppercase; }
+    .statement { margin: 12px 0; font-size: 15px; line-height: 1.6; text-align: justify; }
+    .location { margin-top: 18px; padding: clamp(18px, 4vw, 28px); background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 4px 14px #00000008; font-family: system-ui, sans-serif; }
+    .location h2 { margin: 0 0 8px; color: #0f172a; font-size: 22px; }
+    .location p { color: #475569; line-height: 1.55; }
+    .status { padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow-wrap: anywhere; }
+    dl { display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; gap: 12px; margin: 18px 0 0; }
+    dt { color: #64748b; } dd { margin: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+    .small { font-size: 12px; }
+    @media (max-width: 480px) { dl { grid-template-columns: 1fr; gap: 4px; } dd { margin-bottom: 10px; } td { font-size: 12px; padding: 6px; } }
   </style>
 </head>
 <body>
   <main>
-    <h1>Prueba de geolocalización</h1>
-    <p>Al pulsar el botón, tu navegador te preguntará si permites compartir la ubicación de este dispositivo. La ubicación se mostrará aquí y <strong>no se enviará a ningún servidor</strong>.</p>
-    <button id="locate" type="button">Compartir mi ubicación</button>
-    <div id="status" class="status" role="status" aria-live="polite">Esperando a que pulses el botón.</div>
-    <dl aria-label="Datos de ubicación">
-      <dt>Latitud</dt><dd id="lat">—</dd>
-      <dt>Longitud</dt><dd id="lon">—</dd>
-      <dt>Precisión</dt><dd id="accuracy">—</dd>
-      <dt>Fecha de lectura</dt><dd id="timestamp">—</dd>
-    </dl>
-    <p class="note">Necesitas abrir esta página mediante HTTPS y aceptar el permiso del navegador. La ubicación puede no estar disponible si el dispositivo o el navegador tienen los servicios de ubicación desactivados.</p>
+    <div class="demo-banner">DOCUMENTO FICTICIO DE DEMOSTRACIÓN · NO ES UN INFORME POLICIAL OFICIAL</div>
+    <section class="report" aria-label="Informe ficticio">
+      <header>
+        <h1>Department of Police &amp; Public Safety</h1>
+        <h2>Sample Incident Administrative Report</h2>
+      </header>
+      <table aria-label="Datos ficticios del informe">
+        <tr><td class="label">Case Number:</td><td>DEMO-2026-001</td><td class="label">Date of Report:</td><td id="current-date">—</td></tr>
+        <tr><td class="label">Reporting Officer:</td><td>Fictional Demo Officer</td><td class="label">Classification:</td><td>Demonstration only</td></tr>
+        <tr><td class="label">Status:</td><td>NOT A REAL CASE</td><td class="label">Security Level:</td><td>Public demo</td></tr>
+      </table>
+      <h3>1. Incident Summary</h3>
+      <p class="statement">This is a fictional sample report used to demonstrate a document-style web layout. It does not describe a real incident, investigation, authority, or recipient.</p>
+      <h3>2. Notice &amp; Verification</h3>
+      <p class="statement">No credentials, authentication tokens, or personal details are requested by this sample report. The separate location section below explains the browser location permission request.</p>
+      <h3>3. Affirmation</h3>
+      <p class="statement">This page is a demo. The location is only displayed in this page and is not sent to a server by this code.</p>
+    </section>
+
+    <section class="location" aria-labelledby="location-title">
+      <h2 id="location-title">Información de ubicación</h2>
+      <p>Esta demostración solicitará permiso para consultar la ubicación de tu dispositivo mediante el navegador. Si aceptas, se mostrarán aquí las coordenadas y la precisión. El código de esta página no transmite estos datos a ningún servidor.</p>
+      <div id="status" class="status" role="status" aria-live="polite">Solicitando permiso de ubicación al navegador…</div>
+      <dl aria-label="Datos de ubicación">
+        <dt>Latitud</dt><dd id="lat">—</dd>
+        <dt>Longitud</dt><dd id="lon">—</dd>
+        <dt>Precisión</dt><dd id="accuracy">—</dd>
+        <dt>Fecha de lectura</dt><dd id="timestamp">—</dd>
+      </dl>
+      <p class="small">La geolocalización requiere HTTPS y permiso del navegador. Si deniegas el permiso, no se mostrarán coordenadas.</p>
+    </section>
   </main>
   <script>
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     (() => {
-      const button = document.getElementById('locate');
       const status = document.getElementById('status');
       const lat = document.getElementById('lat');
       const lon = document.getElementById('lon');
       const accuracy = document.getElementById('accuracy');
       const timestamp = document.getElementById('timestamp');
-
-      function showError(error) {
-        const messages = {
-          1: 'Has denegado el permiso. Permite la ubicación en los ajustes del navegador si quieres intentarlo de nuevo.',
-          2: 'El dispositivo no ha podido determinar la ubicación. Comprueba los servicios de ubicación e inténtalo otra vez.',
-          3: 'La solicitud ha tardado demasiado. Inténtalo de nuevo.'
-        };
-        status.textContent = messages[error.code] || 'No se ha podido obtener la ubicación.';
+      if (!('geolocation' in navigator)) {
+        status.textContent = 'Este navegador no admite geolocalización.';
+        return;
       }
-
-      button.addEventListener('click', () => {
-        if (!('geolocation' in navigator)) {
-          status.textContent = 'Este navegador no admite geolocalización.';
-          return;
-        }
-        if (!window.isSecureContext) {
-          status.textContent = 'La geolocalización requiere una conexión segura (HTTPS). Abre la versión HTTPS de esta página.';
-          return;
-        }
-
-        button.disabled = true;
-        status.textContent = 'Solicitando permiso y obteniendo ubicación…';
-
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            lat.textContent = position.coords.latitude.toFixed(6);
-            lon.textContent = position.coords.longitude.toFixed(6);
-            accuracy.textContent = '±' + Math.round(position.coords.accuracy) + ' metros';
-            timestamp.textContent = new Date(position.timestamp).toLocaleString();
-            status.textContent = 'Ubicación obtenida correctamente. Estos datos solo se muestran en esta página.';
-            button.disabled = false;
-          },
-          (error) => {
-            showError(error);
-            button.disabled = false;
-          },
-          { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
-        );
-      });
+      if (!window.isSecureContext) {
+        status.textContent = 'La geolocalización requiere HTTPS. Abre esta página mediante una conexión segura.';
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          lat.textContent = position.coords.latitude.toFixed(6);
+          lon.textContent = position.coords.longitude.toFixed(6);
+          accuracy.textContent = '±' + Math.round(position.coords.accuracy) + ' metros';
+          timestamp.textContent = new Date(position.timestamp).toLocaleString();
+          status.textContent = 'Ubicación obtenida. Los datos se muestran solo en esta página y no se envían a un servidor.';
+        },
+        (error) => {
+          const messages = {
+            1: 'Permiso denegado. No se ha obtenido ninguna coordenada.',
+            2: 'El dispositivo no ha podido determinar la ubicación.',
+            3: 'La solicitud de ubicación ha agotado el tiempo de espera.'
+          };
+          status.textContent = messages[error.code] || 'No se ha podido obtener la ubicación.';
+        },
+        { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
+      );
     })();
   </script>
 </body>
