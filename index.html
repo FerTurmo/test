@@ -4,55 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f4f4">
-  <title>Informe ficticio y prueba de ubicación</title>
+  <title>Demostración de ubicación e informe ficticio</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 24px 12px; background: #f4f4f4; color: #111; font-family: "Times New Roman", Times, serif; }
+    body { margin: 0; padding: 24px 12px; background: #f4f4f4; color: #111; font-family: system-ui, sans-serif; }
     main { max-width: 800px; margin: 0 auto; }
-    .demo-banner { margin-bottom: 16px; padding: 12px 16px; border: 1px solid #b22222; background: #fff5f5; color: #8b1d1d; font: 700 14px/1.5 system-ui, sans-serif; text-align: center; }
-    .report { padding: clamp(20px, 6vw, 50px); background: #fff; border: 1px solid #ccc; box-shadow: 0 0 10px #00000012; }
-    header { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px double #002244; text-align: center; }
-    h1 { margin: 0; color: #002244; font-size: clamp(20px, 4vw, 26px); text-transform: uppercase; letter-spacing: .5px; }
-    header h2 { margin: 8px 0 0; color: #555; font-size: 16px; font-weight: normal; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
-    td { border: 1px solid #888; padding: 8px 10px; font-size: 14px; overflow-wrap: anywhere; }
-    td.label { width: 25%; background: #f9f9f9; font-weight: bold; }
-    h3 { margin: 28px 0 10px; padding-bottom: 4px; border-bottom: 1px solid #002244; color: #002244; font-size: 16px; text-transform: uppercase; }
-    .statement { margin: 12px 0; font-size: 15px; line-height: 1.6; text-align: justify; }
-    .location { margin-top: 18px; padding: clamp(18px, 4vw, 28px); background: #fff; border: 1px solid #cbd5e1; box-shadow: 0 4px 14px #00000008; font-family: system-ui, sans-serif; }
-    .location h2 { margin: 0 0 8px; color: #0f172a; font-size: 22px; }
-    .location p { color: #475569; line-height: 1.55; }
+    .notice, .report, .location { padding: clamp(18px, 4vw, 30px); background: #fff; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 4px 14px #00000008; }
+    .notice { margin-bottom: 16px; }
+    .notice h1 { margin-top: 0; font-size: 24px; }
+    .notice p, .report p, .location p { line-height: 1.6; }
+    .demo-banner { margin-bottom: 16px; padding: 12px 16px; border: 1px solid #b22222; background: #fff5f5; color: #8b1d1d; font-weight: 700; text-align: center; }
+    .report { margin-top: 18px; }
+    .report h2 { color: #17365d; text-align: center; }
+    h3 { margin: 24px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #cbd5e1; color: #17365d; font-size: 16px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    td { border: 1px solid #cbd5e1; padding: 8px 10px; font-size: 14px; overflow-wrap: anywhere; }
+    td.label { width: 30%; background: #f8fafc; font-weight: 700; }
     .status { padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow-wrap: anywhere; }
     dl { display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; gap: 12px; margin: 18px 0 0; }
     dt { color: #64748b; } dd { margin: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
-    .small { font-size: 12px; }
+    .small { font-size: 12px; color: #475569; }
+    [hidden] { display: none !important; }
     @media (max-width: 480px) { dl { grid-template-columns: 1fr; gap: 4px; } dd { margin-bottom: 10px; } td { font-size: 12px; padding: 6px; } }
   </style>
 </head>
 <body>
   <main>
-    <div class="demo-banner">DOCUMENTO FICTICIO DE DEMOSTRACIÓN · NO ES UN INFORME POLICIAL OFICIAL</div>
-    <section class="report" aria-label="Informe ficticio">
-      <header>
-        <h1>Department of Police &amp; Public Safety</h1>
-        <h2>Sample Incident Administrative Report</h2>
-      </header>
-      <table aria-label="Datos ficticios del informe">
-        <tr><td class="label">Case Number:</td><td>DEMO-2026-001</td><td class="label">Date of Report:</td><td id="current-date">—</td></tr>
-        <tr><td class="label">Reporting Officer:</td><td>Fictional Demo Officer</td><td class="label">Classification:</td><td>Demonstration only</td></tr>
-        <tr><td class="label">Status:</td><td>NOT A REAL CASE</td><td class="label">Security Level:</td><td>Public demo</td></tr>
-      </table>
-      <h3>1. Incident Summary</h3>
-      <p class="statement">This is a fictional sample report used to demonstrate a document-style web layout. It does not describe a real incident, investigation, authority, or recipient.</p>
-      <h3>2. Notice &amp; Verification</h3>
-      <p class="statement">No credentials, authentication tokens, or personal details are requested by this sample report. The separate location section below explains the browser location permission request.</p>
-      <h3>3. Affirmation</h3>
-      <p class="statement">This page is a demo. The location is only displayed in this page and is not sent to a server by this code.</p>
-    </section>
-
-    <section class="location" aria-labelledby="location-title">
-      <h2 id="location-title">Información de ubicación</h2>
-      <p>Esta demostración solicitará permiso para consultar la ubicación de tu dispositivo mediante el navegador. Si aceptas, se mostrarán aquí las coordenadas y la precisión. El código de esta página no transmite estos datos a ningún servidor.</p>
+    <section class="notice" aria-labelledby="location-title">
+      <h1 id="location-title">Demostración: acceso a la ubicación</h1>
+      <p>Esta página es una demostración. Para ver el informe ficticio de ejemplo que aparece más abajo, el navegador te pedirá permiso para consultar la ubicación de tu dispositivo. La ubicación se mostrará en esta página; este código no la transmite a ningún servidor.</p>
+      <p>Si no concedes el permiso, el informe permanecerá oculto. Puedes rechazarlo sin compartir tu ubicación.</p>
       <div id="status" class="status" role="status" aria-live="polite">Solicitando permiso de ubicación al navegador…</div>
       <dl aria-label="Datos de ubicación">
         <dt>Latitud</dt><dd id="lat">—</dd>
@@ -60,40 +41,63 @@
         <dt>Precisión</dt><dd id="accuracy">—</dd>
         <dt>Fecha de lectura</dt><dd id="timestamp">—</dd>
       </dl>
-      <p class="small">La geolocalización requiere HTTPS y permiso del navegador. Si deniegas el permiso, no se mostrarán coordenadas.</p>
+      <p class="small">La geolocalización requiere HTTPS y permiso del navegador. Si deniegas el permiso, puedes cambiarlo en los ajustes del navegador y volver a cargar esta página.</p>
+    </section>
+
+    <section id="report-content" hidden aria-label="Informe ficticio de demostración">
+      <div class="demo-banner">DOCUMENTO FICTICIO DE DEMOSTRACIÓN · NO ES UN INFORME OFICIAL</div>
+      <article class="report">
+        <h2>Informe de demostración</h2>
+        <p class="small">Ejemplo de diseño. No representa un incidente, una investigación, una autoridad ni un caso real.</p>
+        <table aria-label="Datos ficticios del informe">
+          <tr><td class="label">Número de ejemplo</td><td>DEMO-2026-001</td></tr>
+          <tr><td class="label">Fecha</td><td id="current-date">—</td></tr>
+          <tr><td class="label">Clasificación</td><td>Demostración únicamente</td></tr>
+          <tr><td class="label">Estado</td><td>NO ES UN CASO REAL</td></tr>
+        </table>
+        <h3>1. Resumen</h3>
+        <p>Este informe ficticio se utiliza únicamente para demostrar una presentación documental en una página web.</p>
+        <h3>2. Aviso</h3>
+        <p>Los datos de ubicación mostrados arriba se obtuvieron después de que el visitante concediera permiso al navegador. En esta demostración no se envían a ningún servidor.</p>
+      </article>
     </section>
   </main>
   <script>
-    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
     (() => {
       const status = document.getElementById('status');
       const lat = document.getElementById('lat');
       const lon = document.getElementById('lon');
       const accuracy = document.getElementById('accuracy');
       const timestamp = document.getElementById('timestamp');
+      const report = document.getElementById('report-content');
+
       if (!('geolocation' in navigator)) {
-        status.textContent = 'Este navegador no admite geolocalización.';
+        status.textContent = 'Este navegador no admite geolocalización. El informe permanecerá oculto.';
         return;
       }
       if (!window.isSecureContext) {
-        status.textContent = 'La geolocalización requiere HTTPS. Abre esta página mediante una conexión segura.';
+        status.textContent = 'La geolocalización requiere HTTPS. Abre esta página mediante una conexión segura. El informe permanecerá oculto.';
         return;
       }
+
       navigator.geolocation.getCurrentPosition(
         (position) => {
           lat.textContent = position.coords.latitude.toFixed(6);
           lon.textContent = position.coords.longitude.toFixed(6);
           accuracy.textContent = '±' + Math.round(position.coords.accuracy) + ' metros';
           timestamp.textContent = new Date(position.timestamp).toLocaleString();
-          status.textContent = 'Ubicación obtenida. Los datos se muestran solo en esta página y no se envían a un servidor.';
+          status.textContent = 'Ubicación obtenida. El informe ficticio de demostración ya está visible debajo.';
+          report.hidden = false;
         },
         (error) => {
           const messages = {
-            1: 'Permiso denegado. No se ha obtenido ninguna coordenada.',
-            2: 'El dispositivo no ha podido determinar la ubicación.',
-            3: 'La solicitud de ubicación ha agotado el tiempo de espera.'
+            1: 'Permiso denegado. El informe permanecerá oculto. Si quieres verlo, puedes habilitar la ubicación para este sitio en los ajustes del navegador y volver a cargar la página.',
+            2: 'El dispositivo no ha podido determinar la ubicación. El informe permanecerá oculto; inténtalo de nuevo.',
+            3: 'La solicitud de ubicación ha agotado el tiempo de espera. El informe permanecerá oculto; vuelve a cargar la página e inténtalo de nuevo.'
           };
-          status.textContent = messages[error.code] || 'No se ha podido obtener la ubicación.';
+          status.textContent = messages[error.code] || 'No se ha podido obtener la ubicación. El informe permanecerá oculto.';
+          report.hidden = true;
         },
         { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
       );
